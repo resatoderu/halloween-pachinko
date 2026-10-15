@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🎃 ハロウィンパチンコ</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>🎃 HALLOWEEN PACHINKO 🎰</h1>
+<div class="machine">
+ <div class="screen">
+  <div>👻 HAUNTED JACKPOT 👻</div>
+  <img src="assets/characters/main.png" alt="ハロウィンキャラ" class="main-character">
+  <div class="numbers"><span id="n1">7</span><span id="n2">7</span><span id="n3">7</span></div>
+  <div id="message">玉を発射してスタートを狙え！</div>
+ </div>
+ <canvas id="board" width="400" height="500"></canvas>
+ <div class="stats"><p>🔮 持ち玉 <b id="balls">100</b></p><p>🎯 入賞 <b id="starts">0</b></p></div>
+ <div class="controls">
+  <p class="dial-title">🎯 発射ハンドル</p>
+  <div id="fire" class="fire-dial" role="slider" tabindex="0" aria-label="発射の強さ。回すと発射" aria-valuemin="20" aria-valuemax="100" aria-valuenow="65">
+    <div class="dial-ring"><div class="dial-grip"><span class="dial-arrow">▲</span><span class="dial-core">🎃</span></div></div>
+  </div>
+  <p class="dial-status">発射の強さ <strong id="powerText">65</strong>%</p>
+  <p class="dial-hint">ハンドルを押して右へ動かすと発射！ 離すと停止</p>
+  <input id="power" type="hidden" value="65">
+ </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/matter-js@0.20.0/build/matter.min.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
